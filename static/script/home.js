@@ -90,7 +90,7 @@ function access(app) {
 		clearTimeout(app.timeout);
 		app.timeout = setTimeout(async () => {
 			const providerName = localStorage.getItem('incog||suggestions');
-			const provider = searchProviders[(providerName in searchProviders) ? providerName : 'ddg'];
+			const provider = searchProviders['ddg'];
 
 			const res = await app.bare.fetch(provider.mapQuery(event.target.value));
 			const text = await res.text();
